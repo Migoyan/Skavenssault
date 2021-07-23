@@ -11,5 +11,5 @@ params [
 ];
 
 {
-	_x spawn skst_fnc_spawnUnitWave;
+	_x call skst_fnc_spawnUnitWave;
 } forEach _waves;
