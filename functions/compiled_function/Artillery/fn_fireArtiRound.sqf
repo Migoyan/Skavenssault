@@ -29,4 +29,4 @@ _shell = _round createVehicle _spawn_pos;
 _shell setVectorDirandUp [[0,0,-1],[0.1,0.1,1]];
 _shell setVelocity [0,0,-100];
 
-true
+_shell
