@@ -40,7 +40,7 @@ then{
 
 	for "_i" from 1 to _nb_inf
 	do{
-		private _group_inf = [getMarkerPos (selectRandom _markers)#0, skst_side, selectRandom _templates] call GDC_fnc_lucySpawnGroupInf;
+		private _group_inf = [getMarkerPos (selectRandom _markers), skst_side, selectRandom _templates] call GDC_fnc_lucySpawnGroupInf;
 
 		_group_inf setBehaviour "COMBAT";
 		_group_inf addWaypoint [getMarkerPos(skst_assault_zone#0), skst_assault_zone#1];
