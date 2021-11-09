@@ -2,11 +2,12 @@
  * @name barrageArtillery
  * Function that do a rolled barrage on a rectangular marker or a simple bombardment on an icon marker.
  * 
- * @param {string} [_marker = ""] - rectangular to be used
+ * @param {string} [_marker = ""] - rectangle to be used
  * @param {number} [_artillery = 0] - number of rounds fired per slavo
  * @param {string} [_round = ""] - classnames of the round to fire
  * @param {number} [_number_slavo = 0] - number of shot by piece of artillery
  * @param {number[]} [_dispersion = [50, 0]] - Dispersion on x and y axis in the marker referencial
+ * @param {side} [_side = east] - Side of the shots
  * @param {number} [_time_slavo = 5] - time between each slavo
  * @param {number} [_time_shot = 0.3] - time between each shot
  * @returns true when complete (Doesn't mean that function was successful)
@@ -86,5 +87,8 @@ switch (markerShape _marker) do {
         if(true) exitwith {diag_log ("fn_barrageArtillery, " + str(_marker) + " : marker not existing"); true}
     };
 };
+
+deleteVehicleCrew _veh;
+deleteVehicle _veh;
 
 true
