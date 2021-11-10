@@ -20,6 +20,8 @@ params [
 	["_behaviour", "SAFE", [""]]
 ];
 
+if (!local this) exitWith {};
+
 private "_position";
 private "_waypoint";
 
