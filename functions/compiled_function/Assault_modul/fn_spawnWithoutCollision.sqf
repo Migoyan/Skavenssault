@@ -10,7 +10,7 @@ return :
 
 author : Migoyan
 
-Note : GDC_fnc_lucySpawnVehicle eat [position, side, "classname", crew, orientation], put what you want in the argument position but put something, the function will replace it.
+Note : GDC_fnc_lucySpawnVehicle eat [position, side, "classname", crew, orientation], reduce the array to [side, "classname", crew, orientation] for this fucntion to work.
 	- i'm not using waitUntil method in case the spawn points is blocked forever.
 */
 
@@ -37,12 +37,7 @@ do{
 	};
 };
 
-switch (count _param_to_lucy) do {
-	case 4: { _param_to_lucy = [getMarkerPos _marker] + _param_to_lucy; };
-	case 5: { _param_to_lucy set [0, getMarkerPos _marker]; };
-	default {if (true) exitWith { diag_log "Array passed to Lucy must be size 4 or 5" }};
-};
-
+_param_to_lucy = [getMarkerPos _marker] + _param_to_lucy;
 
 _veh = _param_to_lucy call GDC_fnc_lucySpawnVehicle;
 
