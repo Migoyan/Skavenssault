@@ -25,9 +25,6 @@ _params_correctly_defined = params[
 	['_safe_zone', 10, [0]]
 ];
 
-// Default parameters are not accepted
-if (!_params_correctly_defined) exitWith {diag_log "parameters non defined"};
-
 // Choose a marker and test if there is already a vehicule within 10m of range of the marker position.
 _occupied = true;
 while {_occupied}
