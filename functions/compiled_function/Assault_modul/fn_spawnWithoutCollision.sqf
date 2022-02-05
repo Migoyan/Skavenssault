@@ -36,7 +36,11 @@ do{
 	};
 };
 
-_param_to_lucy = [getMarkerPos _marker] + _param_to_lucy;
+if (_param_to_lucy#0 isEqualType west) then {
+	_param_to_lucy = [getMarkerPos _marker] + _param_to_lucy;
+} else {
+	_param_to_lucy set [getMarkerPos _marker, 0];
+};
 
 _veh = _param_to_lucy call GDC_fnc_lucySpawnVehicle;
 
